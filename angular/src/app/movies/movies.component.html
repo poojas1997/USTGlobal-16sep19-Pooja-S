@@ -1,0 +1,7 @@
+<input type="search" name="name" id="name" placeholder="search by movie name" (onkeyup)="sendMovie(movie)">
+
+
+<div class="container col-md-8 offset-2 card card-body" *ngFor = "let movie of movies">
+        <img src="{{movie.imgurl}}" alt="">
+        <h1>{{movie.name}}</h1>
+    </div>

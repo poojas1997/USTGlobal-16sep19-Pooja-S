@@ -1,0 +1,38 @@
+<div class="col-md-4 offset-4 mt-4 mb-4 card card-body">
+    <form action="" [formGroup]="form"(ngSubmit)="login(form)">
+        <h3 class="text-center">Add Movie</h3>
+        <div class="form-group">
+             <input type="text" name="movie" id="movie" class="form-control" placeholder="Add movie" formControlName="movie">
+             <div *ngIf="movie.touched">
+                <p *ngIf="movie.errors.required" class="text-danger">*this field is mandatory</p>
+            </div>
+         </div>
+
+         <div class="form-group">
+            <input type="text" name="title" id="title" class="form-control" placeholder="Movie Title" formControlName="title">
+            <div *ngIf="title.touched">
+               <p *ngIf="title.errors.required" class="text-danger">*this field is mandatory</p>
+           </div>
+        </div>
+
+        <div class="form-group">
+            <input type="url" name="img" id="img" class="form-control" placeholder="Movie imgurl" formControlName="img">
+            <div *ngIf="img.touched">
+               <p *ngIf="img.errors.required" class="text-danger">*this field is mandatory</p>
+           </div>
+        </div>
+
+        <div class="form-group">
+          <textarea name="desc" id="desc" cols="30" rows="05" class="form-control" placeholder="Movie Description..." formControlName="desc"></textarea>
+          <div *ngIf="desc.touched">
+               <p *ngIf="desc.errors.required" class="text-danger">Enter few desc about movie</p>
+           </div>
+       </div>
+       
+         <div class="form-group">
+            <button type="submit" class="btn btn-primary float-right">Add</button>
+         </div>
+    </form>
+</div>
+
+
